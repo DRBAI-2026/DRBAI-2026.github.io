@@ -11,6 +11,8 @@
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
+
 <header>
   <nav class="navbar">
     <a href="#" onclick="resetPage(); return false;" class="nav-logo">
@@ -37,20 +39,42 @@
 </header>
 
 <section id="home" class="hero">
+  <div class="hero-aurora">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+  </div>
+  <canvas id="hero-canvas"></canvas>
   <div class="hero-overlay">
     <div class="hero-content">
       <h1 class="fade-up">The Data Revolution Behind Modern AI</h1>
       <div class="info-row-horizontal">
         <div class="info-pair">
-          <span class="info-icon">📍</span>
+          <span class="info-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </span>
           <span>Co-located with NeurIPS 2026</span>
         </div>
         <div class="info-pair">
-          <span class="info-icon">📅</span>
+          <span class="info-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </span>
           <span>December 11, 2026</span>
         </div>
         <div class="info-pair">
-          <span class="info-icon">📌</span>
+          <span class="info-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+            </svg>
+          </span>
           <span>Sydney, Australia</span>
         </div>
       </div>
@@ -62,42 +86,42 @@
   </div>
 </section>
 
-<section id="speakers" class="speakers-section" >
+<section id="speakers" class="speakers-section reveal">
   <div class="container">
     <h2 class="section-title">Speakers</h2>
     <div class="grid">
 
-      <div class="speaker" data-url="https://ai.stanford.edu/~cbfinn/">
+      <div class="speaker" data-url="https://ai.stanford.edu/~cbfinn/" style="--i:0">
         <img src="./assets/images/Chelsea_Finn.jpg" alt="Chelsea Finn" />
         <h3>Chelsea Finn</h3>
         <p>Stanford University</p>
       </div>
 
-      <div class="speaker" data-url="https://hanlab.mit.edu/songhan">
+      <div class="speaker" data-url="https://hanlab.mit.edu/songhan" style="--i:1">
         <img src="./assets/images/song_han.jpeg" alt="Song Han" />
         <h3>Song Han</h3>
         <p>MIT</p>
       </div>
 
-      <div class="speaker" data-url="https://www.cs.princeton.edu/~danqic/">
+      <div class="speaker" data-url="https://www.cs.princeton.edu/~danqic/" style="--i:2">
         <img src="./assets/images/danqi_chen.jpg" alt="Danqi Chen" />
         <h3>Danqi Chen</h3>
         <p>Princeton</p>
       </div>
 
-      <div class="speaker" data-url="https://groups.csail.mit.edu/vision/torralbalab/">
+      <div class="speaker" data-url="https://groups.csail.mit.edu/vision/torralbalab/" style="--i:3">
         <img src="./assets/images/Antonio_Torralba.jpg" alt="Antonio Torralba" />
         <h3>Antonio Torralba</h3>
         <p>MIT</p>
       </div>
 
-      <div class="speaker" data-url="https://www.cs.princeton.edu/~zhuangl/">
+      <div class="speaker" data-url="https://www.cs.princeton.edu/~zhuangl/" style="--i:4">
         <img src="./assets/images/zhuang_liu.png" alt="Zhuang Liu" />
         <h3>Zhuang Liu</h3>
         <p>META</p>
       </div>
 
-      <div class="speaker" data-url="https://yejinc.github.io/">
+      <div class="speaker" data-url="https://yejinc.github.io/" style="--i:5">
         <img src="./assets/images/YejinChoi.jpeg" alt="Yejin Choi" />
         <h3>Yejin Choi</h3>
         <p>Stanford / NVIDIA</p>
@@ -107,31 +131,31 @@
 </section>
 
 
-<section id="organizers" class="speakers-section">
+<section id="organizers" class="speakers-section reveal">
   <div class="container">
     <h2 class="section-title">Organizers</h2>
     <div class="grid">
-      <div class="speaker" data-url="https://zhiqiangshen.com/">
+      <div class="speaker" data-url="https://zhiqiangshen.com/" style="--i:0">
         <img src="./assets/images/zhiqiang_shen.JPG" alt="zhiqiang Shen" />
         <h3>Zhiqiang Shen</h3>
         <p>MBZUAI</p>
       </div>
-      <div class="speaker" data-url="https://www.sewonmin.com/">
+      <div class="speaker" data-url="https://www.sewonmin.com/" style="--i:1">
         <img src="./assets/images/sewon.jpg" alt="Sewon Min" />
         <h3>Sewon Min</h3>
         <p>UC Berkeley</p>
       </div>
-      <div class="speaker" data-url="https://hongxu-yin.github.io/">
+      <div class="speaker" data-url="https://hongxu-yin.github.io/" style="--i:2">
         <img src="./assets/images/danny_yin.png" alt="Hongxu Yin" />
         <h3>Hongxu Yin</h3>
         <p>NVIDIA</p>
       </div>
-      <div class="speaker" data-url="https://shangxinyi.github.io/">
+      <div class="speaker" data-url="https://shangxinyi.github.io/" style="--i:3">
         <img src="./assets/images/xinyi_shang.jpg" alt="Xinyi Shang" />
         <h3>Xinyi Shang</h3>
         <p>UCL</p>
       </div>
-      <div class="speaker" data-url="https://jiachengcui.com/">
+      <div class="speaker" data-url="https://jiachengcui.com/" style="--i:4">
         <img src="./assets/images/jiacheng.png" alt="Jiacheng Cui" />
         <h3>Jiacheng Cui</h3>
         <p>MBZUAI</p>
@@ -140,17 +164,52 @@
   </div>
 </section>
 
-<section id="about" class="about-section">
+<section id="about" class="about-section reveal">
   <div class="container">
-  <h2 class="section-title">About</h2>
+    <h2 class="section-title">About</h2>
     <p class="about-paragraph">
-      Foundation models (FMs) have become central to modern machine learning, achieving impressive performance through large-scale data and complex architectures. Yet this progress raises concerns about escalating computational and environmental costs. Recent work highlights the critical role of data, not just in scale, but in information density as a promising path toward more efficient and sustainable learning. This workshop brings together researchers and practitioners to explore data-centric challenges unique to FMs, with a focus on compact, high-quality data curation techniques.
+      <span class="kw">Foundation models</span> (FMs) have become central to modern machine learning, achieving impressive performance through large-scale data and complex architectures. Yet this progress raises concerns about escalating computational and environmental costs. Recent work highlights the critical role of data, not just in scale, but in <span class="kw">information density</span> as a promising path toward more efficient and sustainable learning. This workshop brings together researchers and practitioners to explore <span class="kw">data-centric challenges</span> unique to FMs, with a focus on compact, high-quality data curation techniques.
     </p>
+    <div class="about-highlights">
+
+      <div class="about-stat" style="--i:0">
+        <div class="about-stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="about-stat-num">6</div>
+        <div class="about-stat-label">Invited Speakers</div>
+      </div>
+
+      <div class="about-stat" style="--i:1">
+        <div class="about-stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+        </div>
+        <div class="about-stat-num">8</div>
+        <div class="about-stat-label">Research Topics</div>
+      </div>
+
+      <div class="about-stat" style="--i:2">
+        <div class="about-stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <div class="about-stat-num">Dec 11</div>
+        <div class="about-stat-label">NeurIPS 2026 · Sydney</div>
+      </div>
+
+    </div>
   </div>
 </section>
 
 
-<section id="cfp" class="cfp-section">
+<section id="cfp" class="cfp-section reveal">
   <div class="container">
     <h2 class="section-title">Call For Papers</h2>
     <h3 class="cfp-subtitle">Workshop Scope</h3>
@@ -159,7 +218,7 @@
     </p>
 
     <div class="cfp-grid">
-      <div class="cfp-card">
+      <div class="cfp-card" style="--i:0">
         <div class="cfp-icon">🧠</div>
         <h4 class="cfp-title">Topic 1: Large-Scale Data-Driven Training Paradigms</h4>
         <p class="cfp-text">
@@ -167,7 +226,7 @@ Exploring training strategies that shift the focus from model-centric to data-ce
         </p>
       </div>
 
-      <div class="cfp-card">
+      <div class="cfp-card" style="--i:1">
         <div class="cfp-icon">📦</div>
         <h4 class="cfp-title">Topic 2: Data Efficiency and Compression </h4>
         <p class="cfp-text">
@@ -175,7 +234,7 @@ Techniques for reducing data redundancy, accelerating training pipelines, and ac
         </p>
       </div>
 
-      <div class="cfp-card">
+      <div class="cfp-card" style="--i:2">
         <div class="cfp-icon">🧪</div>
         <h4 class="cfp-title">Topic 3: Synthetic Data for Foundational Models</h4>
         <p class="cfp-text">
@@ -183,7 +242,7 @@ Techniques for producing synthetic data aligned with foundational model objectiv
         </p>
       </div>
 
-      <div class="cfp-card">
+      <div class="cfp-card" style="--i:3">
         <div class="cfp-icon">⚖️</div>
         <h4 class="cfp-title">Topic 4: Active Data Selection for Robustness </h4>
         <p class="cfp-text">
@@ -191,7 +250,7 @@ Strategies that prioritize informative or uncertain samples to improve model rob
         </p>
       </div>
 
-      <div class="cfp-card">
+      <div class="cfp-card" style="--i:4">
         <div class="cfp-icon">📚</div>
         <h4 class="cfp-title">Topic 5: Quantifying Data Information Density </h4>
         <p class="cfp-text">
@@ -199,7 +258,7 @@ Developing metrics and evaluation protocols to measure how informative and diver
         </p>
       </div>
 
-      <div class="cfp-card">
+      <div class="cfp-card" style="--i:5">
         <div class="cfp-icon">📐</div>
         <h4 class="cfp-title">Topic 6: Theoretical Foundations of Data Efficiency</h4>
         <p class="cfp-text">
@@ -207,7 +266,7 @@ Theoretical frameworks that support efficient data utilization, such as generali
         </p>
       </div>
 
-        <div class="cfp-card">
+        <div class="cfp-card" style="--i:6">
         <div class="cfp-icon">🛡️</div>
         <h4 class="cfp-title">Topic 7: Data Provenance and Governance</h4>
         <p class="cfp-text">
@@ -215,7 +274,7 @@ Addressing the origin, tracking, and responsible use of data, including licensin
         </p>
       </div>
 
-        <div class="cfp-card">
+        <div class="cfp-card" style="--i:7">
         <div class="cfp-icon">🔍</div>
         <h4 class="cfp-title">Topic 8: Bias Detection and Mitigation in Training Data</h4>
         <p class="cfp-text">
@@ -227,7 +286,7 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
     <div class="cfp-guidelines">
   <h3 class="cfp-subtitle">Submission Guidelines</h3>
   
-  <div class="cfp-guideline-item">
+  <div class="cfp-guideline-item" style="--i:0">
     <strong>Important Dates</strong>
     <table class="important-dates-table">
       <tr class="row-light">
@@ -262,7 +321,7 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
     <!-- </p> -->
   <!-- </div> -->
 
-  <div class="cfp-guideline-item">
+  <div class="cfp-guideline-item" style="--i:1">
     <strong>Submission Format</strong>
     <p>
       You must format your submission using the 
@@ -274,21 +333,21 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
     </p>
   </div>
 
-  <div class="cfp-guideline-item">
+  <div class="cfp-guideline-item" style="--i:2">
     <strong>Submission Link</strong>
     <p>
       Papers should be submitted via the <a href="https://openreview.net/" target="_blank">OpenReview Website</a>.
     </p>
   </div>
 
-  <div class="cfp-guideline-item">
+  <div class="cfp-guideline-item" style="--i:3">
     <strong>Review Process</strong>
     <p>
       All papers will be double-blind and reviewed by at least 3 reviewers. Submissions must be anonymous and not contain any identifying information that may violate the double-blind policy.
     </p>
   </div>
 
-    <div class="cfp-guideline-item">
+    <div class="cfp-guideline-item" style="--i:4">
     <strong>Additional Details</strong>
     <p>
       (1) <b style="font-weight: bold;">Non-archival:</b> This workshop is non-archival and will not result in proceedings; workshop submissions can be submitted to other venues.<br>
@@ -302,90 +361,162 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
 </section>
 
 
-<section id="schedule" class="schedule-section">
+<section id="schedule" class="schedule-section reveal">
   <div class="container">
     <h2 class="section-title">Schedule</h2>
-    <table class="schedule-table" >
-      <thead>
-        <tr>
-          <th>Time</th>
-          <th>Event</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="row-light">
-          <td>9:00 - 9:10</td>
-          <td>Opening Remarks</td>
-        </tr>
-        <tr class="row-keynote">
-          <td>9:10 - 9:40</td>
-          <td>Invited Talk 1 (<a href="https://ai.stanford.edu/~cbfinn/" target="_blank" rel="noopener noreferrer">Chelsea Finn</a>)</td>
-        </tr>
-        <tr class="row-keynote">
-          <td>9:40 - 10:10</td>
-          <td>Invited Talk 2 (<a href="https://hanlab.mit.edu/songhan" target="_blank" rel="noopener noreferrer">Song Han</a>)</td>
-        </tr>
-        <tr class="row-poster">
-          <td>10:10 - 11:10</td>
-          <td>Poster Session 1 & Coffee Socials</td>
-        </tr>
-        <tr class="row-keynote">
-          <td>11:10 - 11:40</td>
-          <td>Invited Talk 3 (<a href="https://www.cs.princeton.edu/~danqic/" target="_blank" rel="noopener noreferrer">Danqi Chen</a>)</td>
-        </tr>
-        <tr class="row-keynote">
-          <td>11:40 - 12:10</td>
-          <td>Invited Talk 4 (<a href="https://groups.csail.mit.edu/vision/torralbalab/" target="_blank" rel="noopener noreferrer">Antonio Torralba</a>)</td>
-        </tr>
-        <tr class="row-oral">
-          <td>12:10 - 12:20</td>
-          <td>Oral Presentation 1</td>
-        </tr>
-        <tr class="row-oral">
-          <td>12:20 - 12:30</td>
-          <td>Oral Presentation 2</td>
-        </tr>
-        <tr class="row-light">
-          <td>12:30 - 1:30</td>
-          <td>Lunch Break</td>
-        </tr>
-        <tr class="row-keynote">
-          <td>1:30 - 2:00</td>
-          <td>Invited Talk 5 (<a href="https://www.cs.princeton.edu/~zhuangl/" target="_blank" rel="noopener noreferrer">Zhuang Liu</a>)</td>
-        </tr>
-        <tr class="row-keynote">
-          <td>2:00 - 2:30</td>
-          <td>Invited Talk 6 (<a href="https://yejinc.github.io/" target="_blank" rel="noopener noreferrer">Yejin Choi</a>)</td>
-        </tr>
-        <tr class="row-poster">
-          <td>2:30 - 3:30</td>
-          <td>Poster Session 2 & Coffee Socials</td>
-        </tr>
-        <tr class="row-oral">
-          <td>3:30 - 3:40</td>
-          <td>Oral Presentation 3</td>
-        </tr>
-        <tr class="row-oral">
-          <td>3:40 - 3:50</td>
-          <td>Oral Presentation 4</td>
-        </tr>
-        <tr class="row-panel">
-          <td>3:50 - 4:50</td>
-          <td>Panel Discussion</td>
-        </tr>
-        <tr class="row-poster">
-          <td>4:50 - 5:20</td>
-          <td>Networking Session</td>
-        </tr>
-        <tr class="row-light">
-          <td>5:20 - 5:30</td>
-          <td>Closing Remarks</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="schedule-timeline">
+
+      <div class="tl-item tl-misc" style="--i:0">
+        <div class="tl-time">9:00 – 9:10</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body"><span class="tl-text">Opening Remarks</span></div>
+      </div>
+
+      <div class="tl-item tl-keynote" style="--i:1">
+        <div class="tl-time">9:10 – 9:40</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Keynote</span>
+          <span class="tl-text">Invited Talk 1 (<a href="https://ai.stanford.edu/~cbfinn/" target="_blank" rel="noopener noreferrer">Chelsea Finn</a>)</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-keynote" style="--i:2">
+        <div class="tl-time">9:40 – 10:10</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Keynote</span>
+          <span class="tl-text">Invited Talk 2 (<a href="https://hanlab.mit.edu/songhan" target="_blank" rel="noopener noreferrer">Song Han</a>)</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-poster" style="--i:3">
+        <div class="tl-time">10:10 – 11:10</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Poster</span>
+          <span class="tl-text">Poster Session 1 &amp; Coffee Socials</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-keynote" style="--i:4">
+        <div class="tl-time">11:10 – 11:40</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Keynote</span>
+          <span class="tl-text">Invited Talk 3 (<a href="https://www.cs.princeton.edu/~danqic/" target="_blank" rel="noopener noreferrer">Danqi Chen</a>)</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-keynote" style="--i:5">
+        <div class="tl-time">11:40 – 12:10</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Keynote</span>
+          <span class="tl-text">Invited Talk 4 (<a href="https://groups.csail.mit.edu/vision/torralbalab/" target="_blank" rel="noopener noreferrer">Antonio Torralba</a>)</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-oral" style="--i:6">
+        <div class="tl-time">12:10 – 12:20</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Oral</span>
+          <span class="tl-text">Oral Presentation 1</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-oral" style="--i:7">
+        <div class="tl-time">12:20 – 12:30</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Oral</span>
+          <span class="tl-text">Oral Presentation 2</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-break" style="--i:8">
+        <div class="tl-time">12:30 – 1:30</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body"><span class="tl-text">🍽 Lunch Break</span></div>
+      </div>
+
+      <div class="tl-item tl-keynote" style="--i:9">
+        <div class="tl-time">1:30 – 2:00</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Keynote</span>
+          <span class="tl-text">Invited Talk 5 (<a href="https://www.cs.princeton.edu/~zhuangl/" target="_blank" rel="noopener noreferrer">Zhuang Liu</a>)</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-keynote" style="--i:10">
+        <div class="tl-time">2:00 – 2:30</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Keynote</span>
+          <span class="tl-text">Invited Talk 6 (<a href="https://yejinc.github.io/" target="_blank" rel="noopener noreferrer">Yejin Choi</a>)</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-poster" style="--i:11">
+        <div class="tl-time">2:30 – 3:30</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Poster</span>
+          <span class="tl-text">Poster Session 2 &amp; Coffee Socials</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-oral" style="--i:12">
+        <div class="tl-time">3:30 – 3:40</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Oral</span>
+          <span class="tl-text">Oral Presentation 3</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-oral" style="--i:13">
+        <div class="tl-time">3:40 – 3:50</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Oral</span>
+          <span class="tl-text">Oral Presentation 4</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-panel" style="--i:14">
+        <div class="tl-time">3:50 – 4:50</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Panel</span>
+          <span class="tl-text">Panel Discussion</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-poster" style="--i:15">
+        <div class="tl-time">4:50 – 5:20</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body">
+          <span class="tl-badge">Social</span>
+          <span class="tl-text">Networking Session</span>
+        </div>
+      </div>
+
+      <div class="tl-item tl-misc" style="--i:16">
+        <div class="tl-time">5:20 – 5:30</div>
+        <div class="tl-spine"><div class="tl-dot"></div></div>
+        <div class="tl-body"><span class="tl-text">Closing Remarks</span></div>
+      </div>
+
+    </div>
   </div>
 </section>
 
+
+<div class="cursor-dot"  id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
 <script>
   function resetPage() {
@@ -436,7 +567,142 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
   navLinks.classList.toggle('show');
 }
 
+  // Scroll progress bar + navbar glassmorphism + back-to-top
+  const progressBar = document.getElementById('scrollProgress');
+  const backToTop   = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total    = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (scrolled / total * 100) + '%';
+    document.querySelector('header').classList.toggle('scrolled', scrolled > 10);
+    backToTop.classList.toggle('visible', scrolled > 300);
+  });
+
+  // Scroll reveal via IntersectionObserver
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Custom cursor (desktop only)
+  (function() {
+    if (window.matchMedia('(hover: none)').matches) return;
+    const dot  = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0, ready = false;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx + 'px';
+      dot.style.top  = my + 'px';
+      if (!ready) { rx = mx; ry = my; ready = true; dot.style.opacity = '1'; ring.style.opacity = '1'; }
+    });
+
+    document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { if (ready) { dot.style.opacity = '1'; ring.style.opacity = '1'; } });
+
+    (function lerp() {
+      rx += (mx - rx) * 0.13;
+      ry += (my - ry) * 0.13;
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(lerp);
+    })();
+
+    const interactive = 'a, button, .speaker, .cfp-card, .cfp-guideline-item, .btn-ghost, .back-to-top, .tl-item';
+    document.querySelectorAll(interactive).forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+
+    document.addEventListener('mousedown', () => {
+      dot.style.transform  = 'translate(-50%,-50%) scale(0.5)';
+      ring.style.transform = 'translate(-50%,-50%) scale(0.75)';
+    });
+    document.addEventListener('mouseup', () => {
+      dot.style.transform  = 'translate(-50%,-50%) scale(1)';
+      ring.style.transform = 'translate(-50%,-50%) scale(1)';
+    });
+  })();
+
+  // Hero particle network
+  (function() {
+    const canvas = document.getElementById('hero-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+
+    class Particle {
+      constructor() { this.init(); }
+      init() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.r = Math.random() * 1.8 + 0.4;
+        this.vx = (Math.random() - 0.5) * 0.45;
+        this.vy = (Math.random() - 0.5) * 0.45;
+        this.alpha = Math.random() * 0.55 + 0.2;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200, 177, 214, ${this.alpha})`;
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      resize();
+      particles = Array.from({ length: 70 }, () => new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 110) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(200, 177, 214, ${0.18 * (1 - d / 110)})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', init);
+    init();
+    animate();
+  })();
+
 </script>
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
 
 </body>
 </html>
