@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Data Revolution Behind Modern AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <!-- (Optional) PNG fallback for old browsers -->
+  <link rel="icon" href="./assets/images/logo.svg" type="image/png">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <a href="#" onclick="resetPage(); return false;" class="nav-logo">
+      <img src="./assets/images/logo.png" alt="Logo" />
+    </a>
+    <div class="nav-center">
+      <div class="nav-toggle" onclick="toggleNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#organizers">Organizers</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#cfp">Call For Papers</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#">Awards</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1 class="fade-up">The Data Revolution Behind Modern AI</h1>
+      <div class="info-row-horizontal">
+        <div class="info-pair">
+          <span class="info-icon">📍</span>
+          <span>Co-located with NeurIPS 2026</span>
+        </div>
+        <div class="info-pair">
+          <span class="info-icon">📅</span>
+          <span>December 11, 2026</span>
+        </div>
+        <div class="info-pair">
+          <span class="info-icon">📌</span>
+          <span>Sydney, Australia</span>
+        </div>
+      </div>
+      <div class="hero-buttons">
+        <a href="#" class="btn-ghost">Accepted Papers</a>
+        <a href="#schedule" class="btn-ghost">Schedule At NeurIPS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="speakers" class="speakers-section" >
+  <div class="container">
+    <h2 class="section-title">Speakers</h2>
+    <div class="grid">
+
+      <div class="speaker" data-url="https://ai.stanford.edu/~cbfinn/">
+        <img src="./assets/images/Chelsea_Finn.jpg" alt="Chelsea Finn" />
+        <h3>Chelsea Finn</h3>
+        <p>Stanford University</p>
+      </div>
+
+      <div class="speaker" data-url="https://hanlab.mit.edu/songhan">
+        <img src="./assets/images/song_han.jpeg" alt="Song Han" />
+        <h3>Song Han</h3>
+        <p>MIT</p>
+      </div>
+
+      <div class="speaker" data-url="https://www.cs.princeton.edu/~danqic/">
+        <img src="./assets/images/danqi_chen.jpg" alt="Danqi Chen" />
+        <h3>Danqi Chen</h3>
+        <p>Princeton</p>
+      </div>
+
+      <div class="speaker" data-url="https://groups.csail.mit.edu/vision/torralbalab/">
+        <img src="./assets/images/Antonio_Torralba.jpg" alt="Antonio Torralba" />
+        <h3>Antonio Torralba</h3>
+        <p>MIT</p>
+      </div>
+
+      <div class="speaker" data-url="https://www.cs.princeton.edu/~zhuangl/">
+        <img src="./assets/images/zhuang_liu.png" alt="Zhuang Liu" />
+        <h3>Zhuang Liu</h3>
+        <p>META</p>
+      </div>
+
+      <div class="speaker" data-url="https://yejinc.github.io/">
+        <img src="./assets/images/YejinChoi.jpeg" alt="Yejin Choi" />
+        <h3>Yejin Choi</h3>
+        <p>Stanford / NVIDIA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="organizers" class="speakers-section">
+  <div class="container">
+    <h2 class="section-title">Organizers</h2>
+    <div class="grid">
+      <div class="speaker" data-url="https://zhiqiangshen.com/">
+        <img src="./assets/images/zhiqiang_shen.JPG" alt="zhiqiang Shen" />
+        <h3>Zhiqiang Shen</h3>
+        <p>MBZUAI</p>
+      </div>
+      <div class="speaker" data-url="https://www.sewonmin.com/">
+        <img src="./assets/images/sewon.jpg" alt="Sewon Min" />
+        <h3>Sewon Min</h3>
+        <p>UC Berkeley</p>
+      </div>
+      <div class="speaker" data-url="https://hongxu-yin.github.io/">
+        <img src="./assets/images/danny_yin.png" alt="Hongxu Yin" />
+        <h3>Hongxu Yin</h3>
+        <p>NVIDIA</p>
+      </div>
+      <div class="speaker" data-url="https://shangxinyi.github.io/">
+        <img src="./assets/images/xinyi_shang.jpg" alt="Xinyi Shang" />
+        <h3>Xinyi Shang</h3>
+        <p>UCL</p>
+      </div>
+      <div class="speaker" data-url="https://jiachengcui.com/">
+        <img src="./assets/images/jiacheng.png" alt="Jiacheng Cui" />
+        <h3>Jiacheng Cui</h3>
+        <p>MBZUAI</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about-section">
+  <div class="container">
+  <h2 class="section-title">About</h2>
+    <p class="about-paragraph">
+      Foundation models (FMs) have become central to modern machine learning, achieving impressive performance through large-scale data and complex architectures. Yet this progress raises concerns about escalating computational and environmental costs. Recent work highlights the critical role of data, not just in scale, but in information density as a promising path toward more efficient and sustainable learning. This workshop brings together researchers and practitioners to explore data-centric challenges unique to FMs, with a focus on compact, high-quality data curation techniques.
+    </p>
+  </div>
+</section>
+
+
+<section id="cfp" class="cfp-section">
+  <div class="container">
+    <h2 class="section-title">Call For Papers</h2>
+    <h3 class="cfp-subtitle">Workshop Scope</h3>
+    <p class="cfp-intro">
+    We welcome submissions and discussions on a wide range of topics related to data-centric research for foundational models, including but not limited to:
+    </p>
+
+    <div class="cfp-grid">
+      <div class="cfp-card">
+        <div class="cfp-icon">🧠</div>
+        <h4 class="cfp-title">Topic 1: Large-Scale Data-Driven Training Paradigms</h4>
+        <p class="cfp-text">
+Exploring training strategies that shift the focus from model-centric to data-centric approaches, emphasizing how data quality and selection influence model performance.
+        </p>
+      </div>
+
+      <div class="cfp-card">
+        <div class="cfp-icon">📦</div>
+        <h4 class="cfp-title">Topic 2: Data Efficiency and Compression </h4>
+        <p class="cfp-text">
+Techniques for reducing data redundancy, accelerating training pipelines, and achieving high performance with fewer data samples through compression, selection, or pruning.
+        </p>
+      </div>
+
+      <div class="cfp-card">
+        <div class="cfp-icon">🧪</div>
+        <h4 class="cfp-title">Topic 3: Synthetic Data for Foundational Models</h4>
+        <p class="cfp-text">
+Techniques for producing synthetic data aligned with foundational model objectives, covering approaches like distillation, simulation-based generation, and structured augmentation.
+        </p>
+      </div>
+
+      <div class="cfp-card">
+        <div class="cfp-icon">⚖️</div>
+        <h4 class="cfp-title">Topic 4: Active Data Selection for Robustness </h4>
+        <p class="cfp-text">
+Strategies that prioritize informative or uncertain samples to improve model robustness, adaptability, and performance under distribution shifts, adversarial settings, or data scarcity.
+        </p>
+      </div>
+
+      <div class="cfp-card">
+        <div class="cfp-icon">📚</div>
+        <h4 class="cfp-title">Topic 5: Quantifying Data Information Density </h4>
+        <p class="cfp-text">
+Developing metrics and evaluation protocols to measure how informative and diverse a dataset is, aiming to better understand and improve data utility.
+        </p>
+      </div>
+
+      <div class="cfp-card">
+        <div class="cfp-icon">📐</div>
+        <h4 class="cfp-title">Topic 6: Theoretical Foundations of Data Efficiency</h4>
+        <p class="cfp-text">
+Theoretical frameworks that support efficient data utilization, such as generalization bounds, information-theoretic limits, and optimal sub-sampling theories.
+        </p>
+      </div>
+
+        <div class="cfp-card">
+        <div class="cfp-icon">🛡️</div>
+        <h4 class="cfp-title">Topic 7: Data Provenance and Governance</h4>
+        <p class="cfp-text">
+Addressing the origin, tracking, and responsible use of data, including licensing, traceability, reproducibility, and regulatory compliance.
+        </p>
+      </div>
+
+        <div class="cfp-card">
+        <div class="cfp-icon">🔍</div>
+        <h4 class="cfp-title">Topic 8: Bias Detection and Mitigation in Training Data</h4>
+        <p class="cfp-text">
+Methods for identifying, measuring, and mitigating bias in training data, with the goal of improving generalization, improving representation across subgroups.
+        </p>
+      </div>
+    </div>
+
+    <div class="cfp-guidelines">
+  <h3 class="cfp-subtitle">Submission Guidelines</h3>
+  
+  <div class="cfp-guideline-item">
+    <strong>Important Dates</strong>
+    <table class="important-dates-table">
+      <tr class="row-light">
+        <td>Suggested Submission Deadline</td>
+        <td>August 22, 2025, AoE</td>
+      </tr>
+      <tr>
+        <td>Accept/Reject Notification</td>
+        <td>September 22, 2025, AoE</td>
+      </tr>
+      <!-- <tr class="row-light">
+        <td>Camera-ready Submission</td>
+        <td>October 10, 2025, AoE</td>
+      </tr> -->
+      <tr>
+        <td>Workshop Date</td>
+        <td>December 6, 2025, AoE</td>
+      </tr>
+    </table>
+  </div>
+
+
+
+
+  <!-- <div class="cfp-guideline-item"> -->
+    <!-- <strong>Submission Tracks</strong> -->
+    <!-- <p> -->
+      <!-- (1) <em>Demo Track</em>: Papers demonstrating critical use cases of AI in data-centric research. <br> -->
+      <!-- (2) <em>Position Track</em>: Papers presenting new challenges/trends in safety, data policy, or alignment. Refer to  -->
+      <!-- <a href="https://icml.cc/Conferences/2024/CallForPapers#position" target="_blank">ICML 2024 call for position paper</a> for definition. Title should include “Position:”.<br> -->
+      <!-- (3) <em>Research Track</em>: Papers presenting novel methodologies or insights that address critical challenges in data-centric ML or foundational model efficiency. -->
+    <!-- </p> -->
+  <!-- </div> -->
+
+  <div class="cfp-guideline-item">
+    <strong>Submission Format</strong>
+    <p>
+      You must format your submission using the 
+      <a href="https://media.neurips.cc/Conferences/NeurIPS2025/Styles.zip" target="_blank">NeurIPS 2025 LaTeX file</a>. <br>
+      Use <code>\usepackage{neurips_2025}</code> (no options) to ensure anonymity. Submissions violating NeurIPS style or page limits will be rejected without review. <br>
+      Page limits (excluding references and appendix):<br>
+      <!-- <strong> Demo / Position:</strong> max 5 pages<br> -->
+      <!-- <strong>Research:</strong> max 9 pages -->
+    </p>
+  </div>
+
+  <div class="cfp-guideline-item">
+    <strong>Submission Link</strong>
+    <p>
+      Papers should be submitted via the <a href="https://openreview.net/" target="_blank">OpenReview Website</a>.
+    </p>
+  </div>
+
+  <div class="cfp-guideline-item">
+    <strong>Review Process</strong>
+    <p>
+      All papers will be double-blind and reviewed by at least 3 reviewers. Submissions must be anonymous and not contain any identifying information that may violate the double-blind policy.
+    </p>
+  </div>
+
+    <div class="cfp-guideline-item">
+    <strong>Additional Details</strong>
+    <p>
+      (1) <b style="font-weight: bold;">Non-archival:</b> This workshop is non-archival and will not result in proceedings; workshop submissions can be submitted to other venues.<br>
+      (2) <b style="font-weight: bold;">Dual Submission:</b> We welcome papers that may have been already accepted at Neurips 2025 but which are also relevant to this workshop, or that under reviews at other venues (e.g., ICLR, ICML).<br>
+      (3) <b style="font-weight: bold;">Contact:</b>  For any questions or submission-related issues, please contact <code>tdel.workshop@gmail.com</code>.
+    </p>
+  </div>
+
+</div>
+  </div>
+</section>
+
+
+<section id="schedule" class="schedule-section">
+  <div class="container">
+    <h2 class="section-title">Schedule</h2>
+    <table class="schedule-table" >
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Event</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row-light">
+          <td>9:00 - 9:10</td>
+          <td>Opening Remarks</td>
+        </tr>
+        <tr class="row-keynote">
+          <td>9:10 - 9:40</td>
+          <td>Invited Talk 1 (<a href="https://ai.stanford.edu/~cbfinn/" target="_blank" rel="noopener noreferrer">Chelsea Finn</a>)</td>
+        </tr>
+        <tr class="row-keynote">
+          <td>9:40 - 10:10</td>
+          <td>Invited Talk 2 (<a href="https://hanlab.mit.edu/songhan" target="_blank" rel="noopener noreferrer">Song Han</a>)</td>
+        </tr>
+        <tr class="row-poster">
+          <td>10:10 - 11:10</td>
+          <td>Poster Session 1 & Coffee Socials</td>
+        </tr>
+        <tr class="row-keynote">
+          <td>11:10 - 11:40</td>
+          <td>Invited Talk 3 (<a href="https://www.cs.princeton.edu/~danqic/" target="_blank" rel="noopener noreferrer">Danqi Chen</a>)</td>
+        </tr>
+        <tr class="row-keynote">
+          <td>11:40 - 12:10</td>
+          <td>Invited Talk 4 (<a href="https://groups.csail.mit.edu/vision/torralbalab/" target="_blank" rel="noopener noreferrer">Antonio Torralba</a>)</td>
+        </tr>
+        <tr class="row-oral">
+          <td>12:10 - 12:20</td>
+          <td>Oral Presentation 1</td>
+        </tr>
+        <tr class="row-oral">
+          <td>12:20 - 12:30</td>
+          <td>Oral Presentation 2</td>
+        </tr>
+        <tr class="row-light">
+          <td>12:30 - 1:30</td>
+          <td>Lunch Break</td>
+        </tr>
+        <tr class="row-keynote">
+          <td>1:30 - 2:00</td>
+          <td>Invited Talk 5 (<a href="https://www.cs.princeton.edu/~zhuangl/" target="_blank" rel="noopener noreferrer">Zhuang Liu</a>)</td>
+        </tr>
+        <tr class="row-keynote">
+          <td>2:00 - 2:30</td>
+          <td>Invited Talk 6 (<a href="https://yejinc.github.io/" target="_blank" rel="noopener noreferrer">Yejin Choi</a>)</td>
+        </tr>
+        <tr class="row-poster">
+          <td>2:30 - 3:30</td>
+          <td>Poster Session 2 & Coffee Socials</td>
+        </tr>
+        <tr class="row-oral">
+          <td>3:30 - 3:40</td>
+          <td>Oral Presentation 3</td>
+        </tr>
+        <tr class="row-oral">
+          <td>3:40 - 3:50</td>
+          <td>Oral Presentation 4</td>
+        </tr>
+        <tr class="row-panel">
+          <td>3:50 - 4:50</td>
+          <td>Panel Discussion</td>
+        </tr>
+        <tr class="row-poster">
+          <td>4:50 - 5:20</td>
+          <td>Networking Session</td>
+        </tr>
+        <tr class="row-light">
+          <td>5:20 - 5:30</td>
+          <td>Closing Remarks</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<script>
+  function resetPage() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      window.location.href = window.location.pathname;
+    }, 500); // 时间微调为最佳体验
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname + window.location.search);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 1);
+    }
+  });
+  document.querySelectorAll(".speaker").forEach((card) => {
+  card.addEventListener("click", () => {
+      const url = card.getAttribute("data-url");
+      if (url) {
+        window.open(url, "_blank"); // 在新标签页打开
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  window.addEventListener("scroll", () => {
+    let scrollY = window.scrollY;
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${sectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  });
+  function toggleNav() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('show');
+}
+
+</script>
+
+</body>
+</html>
