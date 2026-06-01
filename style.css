@@ -343,17 +343,38 @@ header { width: 100%; background: #fff; position: fixed; top: 0; z-index: 1000; 
 }
 
 .cfp-subtitle {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #1c1c1e;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #6b3fa0 60%, #4a7abf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cfp-subtitle::before {
+  content: '';
+  flex-shrink: 0;
+  width: 4px;
+  height: 1.35em;
+  background: linear-gradient(to bottom, #c8b1d6, #8ec5fc);
+  background-size: 100% 200%;
+  animation: verticalFlow 3s linear infinite;
+  border-radius: 2px;
+  display: block;
 }
 
 .cfp-intro {
   font-size: 1rem;
-  color: #444;
+  color: #555;
   margin-bottom: 32px;
   max-width: 1200px;
+  padding-left: 14px;
+  border-left: 3px solid rgba(200, 177, 214, 0.45);
+  line-height: 1.7;
 }
 
 .cfp-grid {
