@@ -953,6 +953,84 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
     obs.observe(footer);
   })();
 
+  // ── Text scramble on speaker names ──
+  (function() {
+    const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    function scramble(el) {
+      const orig = el.dataset.orig || el.textContent;
+      el.dataset.orig = orig;
+      let frame = 0, total = 16;
+      clearInterval(el._scramble);
+      el._scramble = setInterval(() => {
+        el.textContent = orig.split('').map((c, i) => {
+          if (c === ' ') return ' ';
+          return frame / total > i / orig.length
+            ? c : CHARS[Math.floor(Math.random() * CHARS.length)];
+        }).join('');
+        if (++frame > total) { clearInterval(el._scramble); el.textContent = orig; }
+      }, 28);
+    }
+    document.querySelectorAll('.speaker h3, .organizer h3').forEach(el => {
+      el.addEventListener('mouseenter', () => scramble(el));
+    });
+  })();
+
+  // ── Click ripple ──
+  (function() {
+    const targets = 'button, .btn-ghost, .btn-primary, .speaker, .cfp-card';
+    document.querySelectorAll(targets).forEach(el => {
+      el.classList.add('ripple-host');
+      el.addEventListener('click', e => {
+        const r = el.getBoundingClientRect();
+        const size = Math.max(r.width, r.height) * 1.4;
+        const wave = document.createElement('span');
+        wave.className = 'ripple-wave';
+        wave.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-r.left-size/2}px;top:${e.clientY-r.top-size/2}px`;
+        el.appendChild(wave);
+        wave.addEventListener('animationend', () => wave.remove());
+      });
+    });
+  })();
+
+  // ── Cursor particle trail (desktop only) ──
+  (function() {
+    if (window.matchMedia('(hover: none)').matches) return;
+    const COLORS = ['#c8b1d6','#8ec5fc','#b886d0','#6b9ddb','#e2d5f5'];
+    let last = 0;
+    document.addEventListener('mousemove', e => {
+      const now = Date.now();
+      if (now - last < 32) return;
+      last = now;
+      const spark = document.createElement('div');
+      spark.className = 'cursor-spark';
+      const dx = (Math.random() - 0.5) * 22, dy = -8 - Math.random() * 14;
+      spark.style.cssText = `left:${e.clientX}px;top:${e.clientY}px;background:${COLORS[Math.floor(Math.random()*COLORS.length)]};--dx:${dx}px;--dy:${dy}px`;
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 580);
+    });
+  })();
+
+  // ── Scroll color shift ──
+  (function() {
+    const root = document.documentElement;
+    window.addEventListener('scroll', () => {
+      const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      const h = Math.round(280 + p * 80); // 280 purple → 360/0 red-ish → back
+      const s = Math.round(45 + p * 15);
+      root.style.setProperty('--accent-h', h);
+      root.style.setProperty('--accent-s', s + '%');
+    }, { passive: true });
+  })();
+
+  // ── Button text slide ──
+  (function() {
+    document.querySelectorAll('.hero .btn-ghost, .btn-primary').forEach(btn => {
+      const text = btn.textContent.trim();
+      btn.classList.add('btn-slide');
+      btn.innerHTML = `<span class="btn-text-inner">${text}</span><span class="btn-text-alt">${text}</span>`;
+    });
+  })();
+
 </script>
 
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
