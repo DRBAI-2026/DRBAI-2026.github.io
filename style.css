@@ -614,8 +614,13 @@ header.scrolled .nav-logo img {
 .nav-toggle span {
   height: 3px;
   width: 100%;
-  background-color: #333;
+  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 2px;
+  transition: background-color 0.4s ease;
+}
+
+header.scrolled .nav-toggle span {
+  background-color: #333;
 }
 
 /* 移动端样式 */
@@ -637,6 +642,14 @@ header.scrolled .nav-logo img {
     text-align: center;
     border-top: 1px solid #eee;
     padding: 12px 0;
+  }
+
+  .nav-links li a {
+    color: #1c1c1e;
+  }
+
+  header.scrolled .nav-links li a {
+    color: #1c1c1e;
   }
 
   .nav-links.show {
