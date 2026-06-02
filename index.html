@@ -619,9 +619,11 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
     });
   });
   function toggleNav() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('show');
-}
+    const navLinks = document.querySelector('.nav-links');
+    const toggle   = document.querySelector('.nav-toggle');
+    navLinks.classList.toggle('show');
+    toggle.classList.toggle('open');
+  }
 
   // Scroll progress bar + navbar glassmorphism + back-to-top
   const progressBar = document.getElementById('scrollProgress');

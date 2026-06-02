@@ -98,6 +98,25 @@ header.scrolled .nav-logo img {
   box-shadow: 0 0 6px rgba(200, 177, 214, 0.7);
 }
 
+.nav-links li a:hover,
+.nav-links li a.active {
+  opacity: 1;
+}
+
+header:not(.scrolled) .nav-links li a:hover {
+  color: #fff;
+}
+
+header.scrolled .nav-links li a:hover {
+  color: #1c1c1e;
+}
+
+.nav-links li a:active {
+  transform: scale(0.94);
+  opacity: 0.7;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
   transform: scaleX(1);
@@ -616,12 +635,17 @@ header.scrolled .nav-logo img {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 2px;
-  transition: background-color 0.4s ease;
+  transition: transform 0.35s ease, opacity 0.25s ease, background-color 0.4s ease;
+  transform-origin: center;
 }
 
 header.scrolled .nav-toggle span {
   background-color: #333;
 }
+
+.nav-toggle.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
 /* 移动端样式 */
 @media (max-width: 768px) {
@@ -646,10 +670,22 @@ header.scrolled .nav-toggle span {
 
   .nav-links li a {
     color: #1c1c1e;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+
+  .nav-links li a::after {
+    display: none;
   }
 
   header.scrolled .nav-links li a {
     color: #1c1c1e;
+  }
+
+  .nav-links li a:active {
+    background: rgba(200, 177, 214, 0.18);
+    color: #6b3fa0;
+    transform: none;
+    opacity: 1;
   }
 
   .nav-links.show {
