@@ -33,6 +33,7 @@
         <li><a href="#cfp">Call For Papers</a></li>
         <li><a href="#schedule">Schedule</a></li>
         <li><a href="#">Awards</a></li>
+        <div class="nav-indicator"></div>
       </ul>
     </div>
   </nav>
@@ -602,6 +603,23 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-links a");
 
+  const navIndicator = document.querySelector('.nav-indicator');
+  const navLinksList = document.querySelector('.nav-links');
+
+  function updateNavIndicator() {
+    if (!navIndicator || !navLinksList) return;
+    const activeLink = navLinksList.querySelector('a.active');
+    if (activeLink) {
+      const linkRect = activeLink.getBoundingClientRect();
+      const navRect  = navLinksList.getBoundingClientRect();
+      navIndicator.style.left    = (linkRect.left - navRect.left) + 'px';
+      navIndicator.style.width   = linkRect.width + 'px';
+      navIndicator.style.opacity = '1';
+    } else {
+      navIndicator.style.opacity = '0';
+    }
+  }
+
   window.addEventListener("scroll", () => {
     let scrollY = window.scrollY;
     sections.forEach((section) => {
@@ -617,6 +635,7 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
         });
       }
     });
+    updateNavIndicator();
   });
   function toggleNav() {
     const navLinks = document.querySelector('.nav-links');
