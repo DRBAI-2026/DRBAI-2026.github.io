@@ -16,7 +16,7 @@
 <header>
   <nav class="navbar">
     <a href="#" onclick="resetPage(); return false;" class="nav-logo">
-      <img src="./assets/images/logo.png" alt="Logo" />
+      <img src="./assets/images/logo.svg" alt="Logo" />
     </a>
     <div class="nav-center">
       <div class="nav-toggle" onclick="toggleNav()">
@@ -85,6 +85,35 @@
     </div>
   </div>
 </section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Data-Centric AI</span><span class="sep">✦</span>
+    <span>Foundation Models</span><span class="sep">✦</span>
+    <span>Synthetic Data</span><span class="sep">✦</span>
+    <span>Data Efficiency</span><span class="sep">✦</span>
+    <span>Information Density</span><span class="sep">✦</span>
+    <span>Knowledge Distillation</span><span class="sep">✦</span>
+    <span>NeurIPS 2026</span><span class="sep">✦</span>
+    <span>Sydney, Australia</span><span class="sep">✦</span>
+    <span>Active Learning</span><span class="sep">✦</span>
+    <span>Data Pruning</span><span class="sep">✦</span>
+    <span>Bias Mitigation</span><span class="sep">✦</span>
+    <span>Data Governance</span><span class="sep">✦</span>
+    <span>Data-Centric AI</span><span class="sep">✦</span>
+    <span>Foundation Models</span><span class="sep">✦</span>
+    <span>Synthetic Data</span><span class="sep">✦</span>
+    <span>Data Efficiency</span><span class="sep">✦</span>
+    <span>Information Density</span><span class="sep">✦</span>
+    <span>Knowledge Distillation</span><span class="sep">✦</span>
+    <span>NeurIPS 2026</span><span class="sep">✦</span>
+    <span>Sydney, Australia</span><span class="sep">✦</span>
+    <span>Active Learning</span><span class="sep">✦</span>
+    <span>Data Pruning</span><span class="sep">✦</span>
+    <span>Bias Mitigation</span><span class="sep">✦</span>
+    <span>Data Governance</span><span class="sep">✦</span>
+  </div>
+</div>
 
 <section id="speakers" class="speakers-section reveal">
   <div class="container">
@@ -519,6 +548,29 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
 </section>
 
 
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <img src="./assets/images/logo.svg" alt="Logo" class="footer-logo"/>
+      <p class="footer-desc">The Data Revolution Behind Modern AI<br>Co-located with NeurIPS 2026<br>Sydney, Australia · December 11, 2026</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="#speakers">Speakers</a>
+      <a href="#organizers">Organizers</a>
+      <a href="#about">About</a>
+      <a href="#cfp">Call For Papers</a>
+      <a href="#schedule">Schedule</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:tdel.workshop@gmail.com">tdel.workshop@gmail.com</a>
+      <p style="margin-top:12px">For submission queries,<br>paper questions, or general<br>workshop inquiries.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 DRBAI Workshop · NeurIPS 2026 · All rights reserved</div>
+</footer>
+
 <div class="cursor-dot"  id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
@@ -592,6 +644,48 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
     });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Hero aurora parallax on mouse move
+  (function() {
+    const hero = document.getElementById('home');
+    if (!hero) return;
+    hero.addEventListener('mousemove', e => {
+      const x = e.clientX / window.innerWidth  - 0.5;
+      const y = e.clientY / window.innerHeight - 0.5;
+      hero.style.setProperty('--a1x', `${x * 42}px`);
+      hero.style.setProperty('--a1y', `${y * 32}px`);
+      hero.style.setProperty('--a2x', `${-x * 32}px`);
+      hero.style.setProperty('--a2y', `${y * 38}px`);
+      hero.style.setProperty('--a3x', `${x * 22}px`);
+      hero.style.setProperty('--a3y', `${-y * 28}px`);
+    });
+  })();
+
+  // About stat counter animation
+  (function() {
+    const about = document.querySelector('.about-section');
+    if (!about) return;
+    const obs = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      about.querySelectorAll('.about-stat-num').forEach(el => {
+        const target = parseInt(el.textContent);
+        if (isNaN(target)) return;
+        let start = null;
+        const duration = 1400;
+        const tick = ts => {
+          if (!start) start = ts;
+          const p = Math.min((ts - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(eased * target);
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = target;
+        };
+        requestAnimationFrame(tick);
+      });
+      obs.unobserve(about);
+    }, { threshold: 0.3 });
+    obs.observe(about);
+  })();
 
   // Custom cursor (desktop only)
   (function() {
