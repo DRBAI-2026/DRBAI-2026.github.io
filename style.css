@@ -708,7 +708,9 @@ header.scrolled .nav-toggle span {
     padding: 12px 0;
   }
 
-  .nav-links li a {
+  .nav-links li a,
+  header:not(.scrolled) .nav-links li a,
+  header.scrolled .nav-links li a {
     color: #1c1c1e;
     transition: color 0.2s ease, background 0.2s ease;
   }
@@ -717,11 +719,8 @@ header.scrolled .nav-toggle span {
     display: none;
   }
 
-  header.scrolled .nav-links li a {
-    color: #1c1c1e;
-  }
-
-  .nav-links li a:active {
+  .nav-links li a:active,
+  header:not(.scrolled) .nav-links li a:active {
     background: rgba(200, 177, 214, 0.18);
     color: #6b3fa0;
     transform: none;
@@ -1743,4 +1742,34 @@ body.cursor-hover .cursor-dot::after {
   color: #888;
   line-height: 1.7;
   margin: 0;
+}
+
+/* ===== PREFERS-REDUCED-MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .hero {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    background: #1a1035 !important;
+  }
+  .reveal, .speakers-section, .cfp-section, .schedule-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .section-title {
+    clip-path: none !important;
+  }
+  .section-title::after {
+    transform: scaleX(1) !important;
+  }
+  .marquee-track { animation: none !important; }
+  .schedule-timeline::before { transform: scaleY(1) !important; }
+  .word-reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .site-footer { opacity: 1 !important; transform: none !important; }
 }

@@ -854,17 +854,18 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
     animate();
   })();
 
-  // ── Hero info rows word stagger ──
+  // ── Hero info rows stagger ──
   (function() {
     document.querySelectorAll('.info-pair, .hero-buttons a').forEach((el, i) => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = `opacity 0.6s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1)`;
       el.style.transitionDelay = (0.9 + i * 0.12) + 's';
-      requestAnimationFrame(() => {
+      // Double rAF: ensures browser has painted initial state before transitioning
+      requestAnimationFrame(() => requestAnimationFrame(() => {
         el.style.opacity = '1';
         el.style.transform = 'translateY(0)';
-      });
+      }));
     });
   })();
 
@@ -951,18 +952,6 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
     window.addEventListener('scroll', onScroll, { passive: true });
   })();
 
-  // ── Footer reveal via IntersectionObserver ──
-  (function() {
-    const footer = document.querySelector('.site-footer');
-    if (!footer) return;
-    const obs = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        footer.classList.add('visible');
-        obs.unobserve(footer);
-      }
-    }, { threshold: 0.05 });
-    obs.observe(footer);
-  })();
 
   // ── Text scramble on speaker names ──
   (function() {
@@ -981,7 +970,7 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
         if (++frame > total) { clearInterval(el._scramble); el.textContent = orig; }
       }, 28);
     }
-    document.querySelectorAll('.speaker h3, .organizer h3').forEach(el => {
+    document.querySelectorAll('.speaker h3').forEach(el => {
       el.addEventListener('mouseenter', () => scramble(el));
     });
   })();
