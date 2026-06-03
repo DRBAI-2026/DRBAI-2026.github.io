@@ -32,7 +32,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#cfp">Call For Papers</a></li>
         <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#">Awards</a></li>
+        <li><a href="#awards">Awards</a></li>
         <div class="nav-indicator"></div>
       </ul>
     </div>
@@ -567,6 +567,16 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
   </div>
 </section>
 
+<section id="awards" class="awards-section reveal">
+  <div class="container">
+    <h2 class="section-title">Awards</h2>
+    <div class="awards-tbd">
+      <div class="awards-tbd-icon">🏆</div>
+      <p class="awards-tbd-title">To Be Announced</p>
+      <p class="awards-tbd-desc">Award details and winners will be announced at the workshop.<br>Stay tuned for updates.</p>
+    </div>
+  </div>
+</section>
 
 <nav class="side-nav-dots" id="sideNavDots">
   <a href="#home"       class="side-dot" data-section="home"       title="Home"></a>
@@ -575,6 +585,7 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
   <a href="#about"      class="side-dot" data-section="about"      title="About"></a>
   <a href="#cfp"        class="side-dot" data-section="cfp"        title="Call For Papers"></a>
   <a href="#schedule"   class="side-dot" data-section="schedule"   title="Schedule"></a>
+  <a href="#awards"     class="side-dot" data-section="awards"     title="Awards"></a>
 </nav>
 
 <footer class="site-footer reveal">
@@ -1022,14 +1033,6 @@ Methods for identifying, measuring, and mitigating bias in training data, with t
     }, { passive: true });
   })();
 
-  // ── Button text slide ──
-  (function() {
-    document.querySelectorAll('.hero .btn-ghost, .btn-primary').forEach(btn => {
-      const text = btn.textContent.trim();
-      btn.classList.add('btn-slide');
-      btn.innerHTML = `<span class="btn-text-inner">${text}</span><span class="btn-text-alt">${text}</span>`;
-    });
-  })();
 
 </script>
 

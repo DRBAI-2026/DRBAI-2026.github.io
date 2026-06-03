@@ -1673,21 +1673,6 @@ body.cursor-hover .cursor-dot::after {
   clip-path: inset(0 0 0% 0);
 }
 
-/* ===== BUTTON TEXT SLIDE ===== */
-.btn-slide { overflow: hidden; position: relative; }
-.btn-slide .btn-text-inner {
-  display: block;
-  transition: transform 0.38s cubic-bezier(0.34, 1.2, 0.64, 1);
-}
-.btn-slide:hover .btn-text-inner { transform: translateY(-100%); }
-.btn-slide .btn-text-alt {
-  position: absolute;
-  inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  transform: translateY(100%);
-  transition: transform 0.38s cubic-bezier(0.34, 1.2, 0.64, 1);
-}
-.btn-slide:hover .btn-text-alt { transform: translateY(0); }
 
 /* ===== SCROLL COLOR SHIFT — CSS vars updated by JS ===== */
 :root {
@@ -1700,4 +1685,62 @@ body.cursor-hover .cursor-dot::after {
     hsl(var(--accent-h), var(--accent-s), var(--accent-l)) 0%,
     hsl(calc(var(--accent-h) + 40), 60%, 70%) 100%);
   transition: background 0.5s ease;
+}
+
+/* ===== AWARDS SECTION ===== */
+.awards-section {
+  background: linear-gradient(160deg, #fafbff 0%, #f3ecfb 100%);
+  padding: 80px 20px;
+}
+
+.awards-tbd {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 56px 40px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  border: 1px solid rgba(200, 177, 214, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.awards-tbd::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #c8b1d6, #8ec5fc, #c8b1d6);
+  background-size: 200% auto;
+  animation: lineShimmer 3s linear infinite;
+}
+
+.awards-tbd-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: trophyFloat 3s ease-in-out infinite;
+}
+
+@keyframes trophyFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.awards-tbd-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6b3fa0, #4a7abf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 12px;
+}
+
+.awards-tbd-desc {
+  font-size: 0.95rem;
+  color: #888;
+  line-height: 1.7;
+  margin: 0;
 }
