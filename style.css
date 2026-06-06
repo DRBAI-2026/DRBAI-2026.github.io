@@ -451,8 +451,14 @@ header.scrolled .nav-links li a:hover {
 
 .cfp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.cfp-card:nth-child(5) {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 10px);
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* Per-card accent colors */
@@ -462,56 +468,102 @@ header.scrolled .nav-links li a:hover {
 .cfp-card:nth-child(3) { --cc: #14b8a6; }
 .cfp-card:nth-child(4) { --cc: #6366f1; }
 .cfp-card:nth-child(5) { --cc: #ec4899; }
-.cfp-card:nth-child(6) { --cc: #06b6d4; }
-.cfp-card:nth-child(7) { --cc: #a855f7; }
-.cfp-card:nth-child(8) { --cc: #10b981; }
 
 .cfp-card {
   background: #ffffff;
   border-radius: 16px;
-  border-top: 3px solid var(--cc);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  padding: 24px 28px;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-left: 4px solid var(--cc);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  padding: 28px 28px 24px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
+.cfp-card::after {
+  content: "0" counter(cfp-num);
+  counter-increment: cfp-num;
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 4.8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: color-mix(in srgb, var(--cc) 9%, transparent);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -2px;
+}
+.cfp-grid { counter-reset: cfp-num; }
 
 .cfp-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 40px color-mix(in srgb, var(--cc) 28%, transparent);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px color-mix(in srgb, var(--cc) 22%, transparent);
 }
 
 .cfp-icon {
-  font-size: 1.7rem;
-  margin-bottom: 16px;
-  width: 56px;
-  height: 56px;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
+  border-radius: 12px;
   color: var(--cc);
   background: color-mix(in srgb, var(--cc) 12%, transparent);
   transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
 }
 
 .cfp-card:hover .cfp-icon {
-  transform: scale(1.22) rotate(-12deg);
+  transform: scale(1.18) rotate(-10deg);
   background: color-mix(in srgb, var(--cc) 22%, transparent);
 }
 
 .cfp-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
   color: #1c1c1e;
+  line-height: 1.35;
 }
 
 .cfp-text {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.65;
+}
+.cfp-text ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.cfp-text ul li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.cfp-text ul li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cc);
+  margin-top: 0.5em;
+}
+.cfp-tag {
+  display: inline-block;
+  background: color-mix(in srgb, var(--cc) 13%, transparent);
+  color: color-mix(in srgb, var(--cc) 75%, #000);
+  padding: 1px 7px;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 
@@ -654,6 +706,12 @@ header.scrolled .nav-links li a:hover {
 
 .important-dates-table tr:hover td {
   background: color-mix(in srgb, #c8b1d6 14%, white);
+}
+.important-dates-table tr:hover td:last-child {
+  background: linear-gradient(135deg, #6b3fa0, #4a7abf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 
