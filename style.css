@@ -1578,6 +1578,33 @@ body.cursor-hover .cursor-dot::after {
     grid-column: auto;
     max-width: 100%;
   }
+  .cfp-card {
+    padding: 20px 16px 16px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .cfp-card::after {
+    font-size: 2.4rem;
+    right: 10px;
+  }
+  .cfp-text ul li {
+    display: block;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .cfp-text ul li::before {
+    display: none;
+  }
+  .cfp-tag {
+    display: inline;
+    white-space: normal;
+    border-radius: 3px;
+    margin-right: 3px;
+    font-size: 0.78rem;
+  }
+  .cfp-text {
+    font-size: 0.875rem;
+  }
 }
 
 /* ===== 3D CARD TILT ===== */
