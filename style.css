@@ -1571,6 +1571,13 @@ body.cursor-hover .cursor-dot::after {
 
 @media (max-width: 768px) {
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .cfp-grid {
+    grid-template-columns: 1fr;
+  }
+  .cfp-card:nth-child(5) {
+    grid-column: auto;
+    max-width: 100%;
+  }
 }
 
 /* ===== 3D CARD TILT ===== */
